@@ -3,14 +3,14 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - main  # Runs the workflow on pushes to the main branch
 
-  workflow_dispatch:
+  workflow_dispatch:  # Allows manual trigger from GitHub Actions UI
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: read  # Needed to clone the repo
+  pages: write  # Required to deploy to GitHub Pages
+  id-token: write  # Required for authentication
 
 jobs:
   deploy:
@@ -18,15 +18,15 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4  # Gets your code
 
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v4  # Configures GitHub Pages
 
       - name: Upload Files
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v2  # Corrected to v2
         with:
-          path: .
+          path: .  # Deploy everything from root
 
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v2  # Deploys to GitHub Pages
