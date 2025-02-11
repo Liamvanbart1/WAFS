@@ -1,0 +1,26 @@
+body {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    background: red;
+    padding: 1em;
+    width: 20%;
+    border: 1px solid black;
+    justify-content: center;
+}
+
+@media (max-width: 800px) {
+    body {
+        flex-direction: column;
+        gap: .5em;
+        justify-content: center;
+    }
+    section {
+        width: 80%;
+    }
+}
