@@ -27,4 +27,5 @@ const toggleTheme = () => {
     document.body.setAttribute("data-theme", currentTheme === "dark" ? "light" : "dark");
 };
 
-document.getElementById("dark-mode").addEventListener("click", toggleTheme);
+document.querySelector("button:last-of-type").addEventListener("click", toggleTheme);
+document.querySelector("button:first-of-type").addEventListener("click", shuffleSections);
