@@ -16,10 +16,10 @@ const fetchJoke = async () => {
 fetchJoke();
 
 function shuffleSections() {
-    let container = document.querySelector("div"); // Select the first div
-    let sections = Array.from(container.children); // Get all direct children (sections)
+    let container = document.querySelector("div");
+    let sections = Array.from(container.children);
     sections.sort(() => Math.random() - 0.5);
-    sections.forEach(section => container.appendChild(section)); // Reorder
+    sections.forEach(section => container.appendChild(section));
 }
 
 const toggleTheme = () => {
