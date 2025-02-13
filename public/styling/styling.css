@@ -63,9 +63,9 @@ section h1, section p {
 }
 
 section:hover {
-    filter: blur(5px);
     transform: scale(1.05);
 }
+
 
 section:hover h1, section:hover p {
     opacity: 1;
@@ -86,4 +86,11 @@ button {
 
 button:hover {
     background-color: var(--button-hover);
+}
+
+
+@media only screen and (max-width: 768px) {
+    body {
+        width: 100%;
+    }
 }

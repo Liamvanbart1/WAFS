@@ -1,6 +1,6 @@
 const fetchJoke = async () => {
     const url = 'https://v2.jokeapi.dev/joke/Programming?type=single';
-    // const jokeDisplay = document.querySelector('p:last-of-type');
+    const jokeDisplay = document.getElementById('grapje');
     try {
         const response = await fetch(url);
         if (!response.ok) {
