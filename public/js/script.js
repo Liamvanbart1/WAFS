@@ -1,32 +1,30 @@
-const apiKey = 'YOUR_API_KEY'; // Replace with your actual API key from GitHub Secrets
-const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
-
-async function fetchNews() {
+const fetchJoke = async () => {
+    const url = 'https://v2.jokeapi.dev/joke/Programming?type=single';
+    // const jokeDisplay = document.querySelector('p:last-of-type');
     try {
         const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error('Error fetching joke from JokeAPI');
+        }
         const data = await response.json();
 
-        if (data.articles && data.articles.length > 0) {
-            const newsList = document.getElementById('news-list');
-            newsList.innerHTML = ''; // Clear existing content
-
-            data.articles.forEach(article => {
-                const listItem = document.createElement('li');
-                listItem.innerHTML = `
-                    <h3>${article.title}</h3>
-                    <p><strong>Source:</strong> ${article.source.name}</p>
-                    <p>${article.description || 'No description available.'}</p>
-                    <a href="${article.url}" target="_blank">Read more</a>
-                `;
-                newsList.appendChild(listItem);
-            });
-        } else {
-            console.log('No articles found');
-        }
+        jokeDisplay.textContent = data.joke;
     } catch (error) {
-        console.error('Error fetching news:', error);
+        console.error('Error:', error);
     }
 }
+fetchJoke();
 
-// Call function when the page loads
-fetchNews();
+function shuffleSections() {
+    let container = document.querySelector("div"); // Select the first div
+    let sections = Array.from(container.children); // Get all direct children (sections)
+    sections.sort(() => Math.random() - 0.5);
+    sections.forEach(section => container.appendChild(section)); // Reorder
+}
+
+const toggleTheme = () => {
+    const currentTheme = document.body.getAttribute("data-theme");
+    document.body.setAttribute("data-theme", currentTheme === "dark" ? "light" : "dark");
+};
+
+document.getElementById("dark-mode").addEventListener("click", toggleTheme);

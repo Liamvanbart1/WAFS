@@ -6,16 +6,30 @@
     <link rel="stylesheet" href="public/styling/styling.css">
 </head>
 <body>
-<section>
-    <h1>Liam van Bart</h1>
-    <p>I am a web developer</p>
-</section>
-
-<section id="news-section">
-    <h2>Latest News on Apple</h2>
-    <ul id="news-list">
-    </ul>
-</section>
+<div>
+    <section data-content="Content A">
+        <h1>Liam van Bart</h1>
+        <p>I am a web developer</p>
+        <p>Dit is grappig</p>
+    </section>
+    <section data-content="Content B">
+        <h1>A</h1>
+        <p>I am a web developer</p>
+        <p>Dit is grappig</p>
+    </section>
+    <section data-content="Content C">
+        <h1>B</h1>
+        <p>I am a web developer</p>
+        <p>Dit is grappig</p>
+    </section>
+    <section data-content="Content C">
+        <h1>C</h1>
+        <p>I am a web developer</p>
+        <p>Dit is grappig</p>
+    </section>
+</div>
+<button onclick="shuffleSections()">Shuffle</button>
+<button id="dark-mode">Dark mode</button>
 <script src="public/js/script.js"></script>
 </body>
 </html>
